@@ -11,8 +11,7 @@ const forecast = (latitude, longtitude, callback) => {
         } else {
             callback(undefined, {
                 forecastData: `${body.daily.data[0].summary} It is currently ${body.currently.temperature} fahrenheits out. There is a ${body.currently.precipProbability}% chance of rain.`,
-                maxTemp: body.daily.data[0].temperatureHigh,
-                minTemp: body.daily.data[0].temperatureLow
+                temperatures: `The high today will be ${body.daily.data[0].temperatureHigh} and low of ${body.daily.data[0].temperatureLow} farenheits.`
             })
         }
     })
